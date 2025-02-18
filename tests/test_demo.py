@@ -6,6 +6,8 @@ from selene import browser, have, be, by
 
 def test_demoqa():
     browser.open('https://demoqa.com/automation-practice-form')
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
     browser.element('input[placeholder="First Name"]').type('vasya')
     browser.element('input[placeholder="Last Name"]').type('ivanov')
     browser.element('input[placeholder="name@example.com"]').type('pupalupa@mail.ru')
